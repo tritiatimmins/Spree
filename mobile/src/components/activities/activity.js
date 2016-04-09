@@ -37,7 +37,6 @@ module.exports = React.createClass({
         <View style={styles.header}>
           <Image
             source={{uri: this.props.route.passProps.photo}}
-            // source={require('../images/Traveler.jpg')}
             style={styles.cover}
             resizeMode={'cover'}
             />
