@@ -1,4 +1,5 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var path = require('path');
 var compression = require('compression');
 var mongoose = require('mongoose');
@@ -8,6 +9,9 @@ var Activity = require( './models/activity' );
 var app = express();
 app.use( compression() ); // must come first!
 
+//Here we are configuring express to use body-parser as middle-ware.
+app.use(bodyParser.urlencoded({ extended: false, limit: '100000mb' })); // jenna
+app.use(bodyParser.json({ limit: '100000mb' })); // jenna
 
 // serve static files like index.html, css etc.
 app.use( express.static( __dirname + '/public' ) );
@@ -25,6 +29,18 @@ app.get('*', function (req, res) {
     res.sendFile( path.join(__dirname, 'public', 'index.html') );
   }
 
+});
+
+app.post( '/api/activities/new', function(req,res) {
+  
+  Activity.create( req.body.activity, function (err) {
+    if ( err )
+      console.log( "error saving new activity:", err );
+    else
+      console.log( "successfully stored new activity in database.\n" );
+  });
+  
+  res.end( 'success' );
 });
 
 

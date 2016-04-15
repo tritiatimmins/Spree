@@ -1,13 +1,10 @@
 var React = require('react-native');
-
 import Camera from 'react-native-camera';
-import Button from '../common/button';
 
 // import 
 var {
   StyleSheet,
   View,
-  Text,
   Dimensions,
   Image,
   TouchableHighlight
@@ -27,14 +24,15 @@ module.exports = React.createClass({
             }}
             style = {styles.preview}
             aspect = {Camera.constants.Aspect.fill}
-            captureTarget={Camera.constants.CaptureTarget.disk}
+            captureTarget={Camera.constants.CaptureTarget.memory}
+            captureQuality={Camera.constants.CaptureQuality.low} // jenna
             >
           </Camera>
         </View> 
             
          <View style={styles.footer}>    
-          <TouchableHighlight onPress={this.takePicture}>
-            <Image source={require('../images/Camera.png')}/>
+          <TouchableHighlight onPress={ this.takePicture }>
+            <Image source={ require('./camera.png') } />
           </TouchableHighlight>
          </View> 
          
@@ -47,13 +45,13 @@ module.exports = React.createClass({
 
       .then( (data) => {
 
-        var activity = this.props.route.passProps;
-        activity.photo = data;
-        console.log('activity: ', activity);
+        var temp = 'data:image/jpeg;base64,' + data; // jenna
+
+        this.props.route.passProps.activity.image = temp; // jenna
 
         this.props.navigator.replace({
           name: 'activity',
-          passProps: activity
+          passProps: this.props.route.passProps
         });
 
       })
