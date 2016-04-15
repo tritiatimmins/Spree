@@ -135,7 +135,9 @@ var styles = StyleSheet.create ({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'stretch',
-    marginTop: 30
+    // marginTop: 30,
+    backgroundColor: '#F2EFF5'
+
   },
 
   map: {

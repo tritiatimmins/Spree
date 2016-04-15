@@ -35,36 +35,37 @@ var styles = StyleSheet.create ({
 
   navbar: {
     position: 'absolute',
-    padding: 5,
-    top: 30,
+    paddingTop: 30,
+    paddingBottom: 10,
+    top: 0,
     left: 0,
     right: 0,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'black',
-    // borderBottomColor: '#42B299',
+    backgroundColor: '#F2EFF5',
     borderBottomWidth: 1,
+    borderBottomColor: '#C5C2C7'
     
   },
 
   backButton: {
     position: 'absolute',
     left: 14,
-    top: 5
+    top: 30
   },
 
   headerText: {
-    color: 'white',
+    color: 'black',
     fontSize: 24,
     // fontWeight: 'bold',
     textShadowColor: 'rgba(0,0,0,0.2)',
-    textShadowRadius: 2,
+    textShadowRadius: 1,
     textShadowOffset: {
-      width: 2,
-      height: 2
+      width: 1,
+      height: 1
     },
-    letterSpacing: 4
+    letterSpacing: 1
   },
 
 });

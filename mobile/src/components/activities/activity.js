@@ -162,8 +162,7 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    paddingTop: 30,
-    backgroundColor: '#F5FCFF',
+    // paddingTop: 30,
   },
 
   image: {
@@ -172,16 +171,24 @@ const styles = StyleSheet.create({
   },
 
   footer: {
-    flex: 2
+    flex: 2,
+    backgroundColor: '#F2EFF5'
   },
 
   titleBar: {
     flex: 1,
     flexDirection: 'row',
     padding: 8,
-    backgroundColor: 'lightblue',
+    backgroundColor: '#6E73EE',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    shadowColor: 'gray',
+    shadowOpacity: 0.5,
+    shadowRadius: 2,
+    shadowOffset: {
+      height: 1,
+      width: 0
+    },
   },
 
   categoryButton: {
@@ -194,17 +201,29 @@ const styles = StyleSheet.create({
   titleText: {
     flex: 1,
     fontSize: 18,
-    textAlign: 'center'
+    textAlign: 'center',
+    color: 'white',
+    fontWeight: 'bold',
   },
 
   description: {
-    flex: 8,
+    flex: 3,
     fontSize: 18,
+    backgroundColor: 'white',
     borderWidth: 1,
-    borderColor: 'gray',
+    borderColor: '#C5C2C7',
     borderRadius: 3,
     padding: 8,
-    margin: 4
+    marginTop: 8,
+    margin: 4,
+    marginBottom: 0, 
+    shadowColor: 'gray',
+    shadowOpacity: 0.5,
+    shadowRadius: 2,
+    shadowOffset: {
+      height: 1,
+      width: 0
+    }
   },
 
   list: {
@@ -227,20 +246,34 @@ const styles = StyleSheet.create({
 
   saveButton: {
     flex: 1,
-    alignSelf: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
     borderWidth: 1,
-    borderColor: 'gray',
-    borderRadius: 3,
-    paddingTop: 5,
-    paddingLeft: 8,
-    paddingBottom: 5,
-    paddingRight: 8,
+    borderColor: '#C5C2C7',
+    borderRadius: 2,
     marginBottom: 8,
-    marginTop: 4
+    marginTop: 8,
+    marginRight: 60,
+    marginLeft: 60,
+    // margin: 40,
+    shadowColor: 'gray',
+    shadowOpacity: 0.5,
+    shadowRadius: 2,
+    shadowOffset: {
+      height: 1,
+      width: 0
+    },
+    backgroundColor: '#6E73EE',
+    // backgroundColor: 'rgba(110, 220, 175, 0.5)'
   },
 
   saveButtonText: {
-    fontSize: 20
+    flex: 1,
+    textAlign: 'center',
+    margin: 10,
+    fontSize: 20,
+    color: 'white',
+    fontWeight: 'bold'
   }
 
 });

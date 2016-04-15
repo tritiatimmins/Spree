@@ -25,6 +25,7 @@ module.exports = React.createClass({
             style = {styles.preview}
             aspect = {Camera.constants.Aspect.fill}
             captureTarget={Camera.constants.CaptureTarget.memory}
+            orientation={Camera.constants.Orientation.portrait}
             captureQuality={Camera.constants.CaptureQuality.high} // jenna
             >
           </Camera>
@@ -32,9 +33,8 @@ module.exports = React.createClass({
             
          <View style={styles.footer}>
 
-          <TouchableHighlight onPress={ this.takePicture }>
+          <TouchableHighlight style={styles.button} onPress={ this.takePicture }>
             <Image source={ require('./camera.png') } />
-
           </TouchableHighlight>
          </View> 
          
@@ -86,7 +86,26 @@ var styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#7A87A7'
+    backgroundColor: '#F2EFF5'
   },
+
+  button: {
+    borderColor: '#C5C2C7',
+    backgroundColor: 'white',
+    // backgroundColor: 'rgba(110, 220, 175, .8)',
+    borderRadius: 10,
+    borderWidth: 2,
+    paddingTop: 27,
+    paddingRight: 30,
+    paddingBottom: 27,
+    paddingLeft: 30,
+    shadowColor: 'gray',
+    shadowOpacity: 0.5,
+    shadowRadius: 2,
+    shadowOffset: {
+      height: 1,
+      width: 0
+    }
+  }
  
 });

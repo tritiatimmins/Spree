@@ -17,7 +17,10 @@ export default class FloatingButton extends Component {
 
     return (
       <TouchableOpacity onPress={ this.props.onPress } >
-        <View style={ [styles.floatingButton, {backgroundColor: this.props.bkColor} ] } >
+        <View 
+        // style={ [styles.floatingButton, {backgroundColor: this.props.x} ] } 
+        style={styles.floatingButton}
+        >
           <Text style={ [styles.buttonText, {color: this.props.color}] }>
             { this.props.text }
           </Text>
@@ -33,13 +36,14 @@ var styles = StyleSheet.create ({
 
   floatingButton: {
     position: 'absolute',
+    backgroundColor: '#6E73EE',
     bottom: 10,
     right: 10,
-    paddingTop: 3,
-    paddingRight: 10,
-    paddingBottom: 3,
-    paddingLeft: 10,
-    borderRadius: 20,
+    paddingTop: 12,
+    paddingRight: 20,
+    paddingBottom: 12,
+    paddingLeft: 20,
+    borderRadius: 70,
     shadowColor: 'black',
     shadowOpacity: 0.9,
     shadowRadius: 3,
@@ -52,7 +56,7 @@ var styles = StyleSheet.create ({
   buttonText: {
     flex: 1,
     alignSelf: 'center',
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: 'bold',
   }
 
