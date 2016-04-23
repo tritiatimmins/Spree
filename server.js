@@ -5,6 +5,12 @@ var compression = require('compression');
 var mongoose = require('mongoose');
 var demoData = require( './models/demo-data' );
 var Activity = require( './models/activity' );
+var User = require('./models/user');
+var Authentication = require('./controllers/authentication');
+var passportService = require('./services/passport');
+var passport = require('passport');
+var requireAuth = passport.authenticate('jwt', {session: false});
+var requireSignin = passport.authenticate('local', {session: false});
 
 var app = express();
 app.use( compression() ); // must come first!
@@ -45,6 +51,10 @@ app.post( '/api/activities/new', function(req,res) {
   res.end( 'success' );
 });
 
+app.post('/api/signin', requireSignin, Authentication.signin);
+
+//sign up route handler (points to authentication controller)
+app.post('/api/signup', Authentication.signup);
 
 var PORT = process.env.PORT || 3000;
 
